@@ -2,7 +2,7 @@
 
 namespace Unit\SprykerFeature\Zed\Setup\Business\Model;
 
-use SprykerFeature\Zed\Setup\Business\Model\GeneratedDirectoryRemover;
+use SprykerFeature\Zed\Setup\Business\Model\DirectoryRemover;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
@@ -10,9 +10,9 @@ use Symfony\Component\Filesystem\Filesystem;
  * @group Zed
  * @group Setup
  * @group Business
- * @group GeneratedDirectoryRemover
+ * @group DirectoryRemover
  */
-class GeneratedDirectoryRemoverTest extends \PHPUnit_Framework_TestCase
+class DirectoryRemoverTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -39,7 +39,7 @@ class GeneratedDirectoryRemoverTest extends \PHPUnit_Framework_TestCase
 
     public function testAfterExecutionGeneratedDirectoryMustBeRemoved()
     {
-        $directoryRemover = new GeneratedDirectoryRemover($this->fixtureDirectory);
+        $directoryRemover = new DirectoryRemover($this->fixtureDirectory);
         $directoryRemover->execute();
 
         $this->assertFalse(is_dir($this->fixtureDirectory));

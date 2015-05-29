@@ -4,7 +4,7 @@ namespace SprykerFeature\Zed\Setup\Business\Model;
 
 use Symfony\Component\Filesystem\Filesystem;
 
-class GeneratedDirectoryRemover
+class DirectoryRemover implements DirectoryRemoverInterface
 {
 
     /**

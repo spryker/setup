@@ -14,7 +14,7 @@ use SprykerEngine\Zed\Kernel\IdeAutoCompletion\IdeBundleAutoCompletionGenerator;
 use SprykerEngine\Zed\Kernel\IdeAutoCompletion\IdeFactoryAutoCompletionGenerator;
 use SprykerEngine\Zed\Kernel\IdeAutoCompletion\MethodTagBuilder\ConstructableMethodTagBuilder;
 use SprykerEngine\Zed\Kernel\IdeAutoCompletion\MethodTagBuilder\GeneratedInterfaceMethodTagBuilder;
-use SprykerEngine\Zed\Kernel\IdeAutoCompletion\MethodTagBuilder\SdkMethodTagBuilder;
+use SprykerEngine\Zed\Kernel\IdeAutoCompletion\MethodTagBuilder\SdkClientMethodTagBuilder;
 use SprykerEngine\Zed\Kernel\IdeAutoCompletion\MethodTagBuilder\YvesPluginMethodTagBuilder;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -89,7 +89,7 @@ class GenerateYvesIdeAutoCompletionConsole extends Console
         $generator = new IdeBundleAutoCompletionGenerator($options);
         $generator
             ->addMethodTagBuilder(new YvesPluginMethodTagBuilder())
-            ->addMethodTagBuilder(new SdkMethodTagBuilder())
+            ->addMethodTagBuilder(new SdkClientMethodTagBuilder())
         ;
 
         $generator->create();

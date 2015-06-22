@@ -2,9 +2,9 @@
 
 namespace SprykerFeature\Client\Setup;
 
-use SprykerEngine\Client\Kernel\AbstractStub;
+use SprykerEngine\Client\Kernel\AbstractClient;
 
-class SetupStub extends AbstractStub
+class SetupClient extends AbstractClient
 {
     /**
      * @return mixed

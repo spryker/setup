@@ -1,8 +1,8 @@
 <?php
 
-namespace SprykerFeature\Client\Setup;
+namespace SprykerFeature\Client\Setup\Service;
 
-use SprykerEngine\Client\Kernel\AbstractClient;
+use SprykerEngine\Client\Kernel\Service\AbstractClient;
 
 class SetupClient extends AbstractClient
 {

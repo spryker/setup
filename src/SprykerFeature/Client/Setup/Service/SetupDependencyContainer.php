@@ -1,9 +1,9 @@
 <?php
 
-namespace SprykerFeature\Client\Setup;
+namespace SprykerFeature\Client\Setup\Service;
 
 use Generated\Client\Ide\FactoryAutoCompletion\Setup;
-use SprykerEngine\Client\Kernel\AbstractDependencyContainer;
+use SprykerEngine\Client\Kernel\Service\AbstractDependencyContainer;
 
 /**
  * @method Setup getFactory()

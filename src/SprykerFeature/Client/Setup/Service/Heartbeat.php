@@ -1,5 +1,9 @@
 <?php
-namespace SprykerFeature\Client\Setup;
+/**
+ * (c) Spryker Systems GmbH copyright protected
+ */
+
+namespace SprykerFeature\Client\Setup\Service;
 
 /** @TODO: Remove Symfony Dependency */
 use SprykerFeature\Client\KvStorage\Service\KvStorageClientInterface;

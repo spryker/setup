@@ -4,15 +4,15 @@
  * (c) Spryker Systems GmbH copyright protected
  */
 
-namespace SprykerFeature\Yves\Setup\Plugin;
+namespace SprykerFeature\Yves\Setup\Communication\Plugin;
 
 use Silex\Application;
-use SprykerEngine\Yves\Kernel\AbstractPlugin;
+use SprykerEngine\Yves\Kernel\Communication\AbstractPlugin;
 
 /**
  * Class MonitoringRouterPlugin
  */
-class MonitoringRouterPlugin extends AbstractPlugin
+class MonitoringRouter extends AbstractPlugin
 {
 
     /**

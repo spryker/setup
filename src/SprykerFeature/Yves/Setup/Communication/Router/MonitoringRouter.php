@@ -4,7 +4,7 @@
  * (c) Spryker Systems GmbH copyright protected
  */
 
-namespace SprykerFeature\Yves\Setup\Router;
+namespace SprykerFeature\Yves\Setup\Communication\Router;
 
 use SprykerFeature\Shared\Application\Communication\ControllerServiceBuilder;
 use SprykerEngine\Shared\Kernel\LocatorLocatorInterface;

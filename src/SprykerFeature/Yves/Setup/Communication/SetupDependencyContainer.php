@@ -4,7 +4,7 @@
  * (c) Spryker Systems GmbH copyright protected
  */
 
-namespace SprykerFeature\Yves\Setup;
+namespace SprykerFeature\Yves\Setup\Communication;
 
 use Silex\Application;
 use Generated\Yves\Ide\FactoryAutoCompletion\Setup;

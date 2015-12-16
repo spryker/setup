@@ -12,7 +12,7 @@ use Spryker\Zed\Setup\SetupConfig;
 /**
  * @method SetupConfig getConfig()
  */
-class SetupDependencyContainer extends AbstractCommunicationFactory
+class SetupCommunicationFactory extends AbstractCommunicationFactory
 {
 
     /**

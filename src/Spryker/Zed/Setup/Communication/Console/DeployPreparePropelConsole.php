@@ -18,6 +18,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * @method \Spryker\Zed\Setup\Business\SetupFacadeInterface getFacade()
  * @method \Spryker\Zed\Setup\Communication\SetupCommunicationFactory getFactory()
+ * @deprecated Use `\Spryker\Zed\Propel\Communication\Console\DeployPreparePropelConsole` instead.
+ * @see \Spryker\Zed\Propel\Communication\Console\DeployPreparePropelConsole
  */
 class DeployPreparePropelConsole extends Console
 {
@@ -43,6 +45,8 @@ class DeployPreparePropelConsole extends Console
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->warning('The console command ' . self::COMMAND_NAME . ' is deprecated. Use propel:deploy:prepare-propel instead');
+
         $dependingCommands = [
             ConvertConfigConsole::COMMAND_NAME,
             SchemaCopyConsole::COMMAND_NAME,

@@ -1,6 +1,6 @@
 parameters:
     level: 7
     ignoreErrors:
-        - { message: '#Unreachable statement - code above always terminates#', path: '%rootDir%/../../../vendor/spryker/spryker/Bundles/Setup/src/Spryker/Zed/Setup/Business/Model/Cronjobs.php' }
+        - { message: '#Unreachable statement - code above always terminates#', path: '%rootDir%/../../../src/Spryker/Setup/src/Spryker/Zed/Setup/Business/Model/Cronjobs.php' }
         -
             identifier: missingType.iterableValue

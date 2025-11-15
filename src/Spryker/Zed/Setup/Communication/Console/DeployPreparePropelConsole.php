@@ -77,7 +77,7 @@ class DeployPreparePropelConsole extends Console
      *
      * @return int
      */
-    protected function runDependingCommand($command, array $arguments = [])
+    protected function runDependingCommand(string $command, array $arguments = []): int
     {
         $command = $this->getApplication()->find($command);
         $arguments['command'] = $command;

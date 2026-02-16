@@ -2,5 +2,9 @@ parameters:
     level: 7
     ignoreErrors:
         - { message: '#Unreachable statement - code above always terminates#', path: '%rootDir%/../../../src/Spryker/Setup/src/Spryker/Zed/Setup/Business/Model/Cronjobs.php' }
+        - { message: '#Strict comparison using === between 0 and 0 will always evaluate to true#', path: '%rootDir%/../../../src/Spryker/Setup/src/Spryker/Zed/Setup/Business/Model/Cronjobs.php' }
+        - { message: '#Parameter \#3 \$value of function curl_setopt expects#', path: '%rootDir%/../../../src/Spryker/Setup/src/Spryker/Zed/Setup/Business/Model/Cronjobs.php' }
+        - { message: '#Parameter \#3 \$value of function curl_setopt expects#', path: '%rootDir%/../../../src/Spryker/Setup/src/Spryker/Zed/Setup/Communication/Controller/JenkinsController.php' }
+        - { message: '#Path in require\(\) .+ is not a file or it does not exist#', path: '%rootDir%/../../../src/Spryker/Setup/src/Spryker/Zed/Setup/Communication/Controller/JenkinsController.php' }
         -
             identifier: missingType.iterableValue

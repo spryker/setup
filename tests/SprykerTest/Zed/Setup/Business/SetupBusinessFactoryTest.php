@@ -24,17 +24,11 @@ use Spryker\Zed\Setup\Business\SetupBusinessFactory;
  */
 class SetupBusinessFactoryTest extends Unit
 {
-    /**
-     * @return \Spryker\Zed\Setup\Business\SetupBusinessFactory
-     */
     private function getFactory(): SetupBusinessFactory
     {
         return new SetupBusinessFactory();
     }
 
-    /**
-     * @return void
-     */
     public function testCreateModelCronjobsShouldReturnFullyConfiguredInstance(): void
     {
         $instance = $this->getFactory()->createModelCronjobs();
@@ -42,9 +36,6 @@ class SetupBusinessFactoryTest extends Unit
         $this->assertInstanceOf(Cronjobs::class, $instance);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateModelGeneratedDirectoryRemoverShouldReturnFullyConfiguredInstance(): void
     {
         $instance = $this->getFactory()->createModelGeneratedDirectoryRemover();

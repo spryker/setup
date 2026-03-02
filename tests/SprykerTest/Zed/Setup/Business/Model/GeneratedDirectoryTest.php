@@ -25,9 +25,6 @@ use Symfony\Component\Finder\Finder;
  */
 class GeneratedDirectoryTest extends Unit
 {
-    /**
-     * @return void
-     */
     public function testClearAbortsOnNonExistingDirectory(): void
     {
         $fileSystemMock = $this->getFileSystemMock();

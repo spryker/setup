@@ -34,9 +34,6 @@ class EmptyGeneratedDirectoryConsoleTest extends Unit
      */
     protected SetupCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testExecuteShouldEmptyGeneratedDirectory(): void
     {
         // Arrange
@@ -58,9 +55,6 @@ class EmptyGeneratedDirectoryConsoleTest extends Unit
         $this->assertFalse(file_exists($testFile));
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         $this->tester->clearDirectory(codecept_data_dir(static::DIRECTORY_FIXTURES));

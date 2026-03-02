@@ -71,9 +71,6 @@ class Cronjobs
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Zed\Setup\SetupConfig $config
-     */
     public function __construct(SetupConfig $config)
     {
         $this->config = $config;
@@ -534,20 +531,11 @@ cd %s
         return $this->config->getJenkinsJobsDirectory();
     }
 
-    /**
-     * @return string
-     */
     protected function getJenkinsCsrfHeader(): string
     {
         return $this->getJenkinsApiResponse(static::JENKINS_URL_API_CSRF_TOKEN);
     }
 
-    /**
-     * @param string $errorMessage
-     * @param string $url
-     *
-     * @return string
-     */
     protected function buildExceptionMessage(string $errorMessage, string $url): string
     {
         $curlErrorMessage = sprintf(static::TEMPLATE_MESSAGE_ERROR_CURL, $errorMessage, $url);
@@ -559,11 +547,6 @@ cd %s
         return $curlErrorMessage;
     }
 
-    /**
-     * @param string $errorMessage
-     *
-     * @return string
-     */
     protected function buildCsrfProtectionErrorMessage(string $errorMessage): string
     {
         $csrfErrorMessage = 'Please add the following configuration to your config_* file to enable the CSRF protection for Jenkins.'
@@ -587,11 +570,6 @@ cd %s
         return $httpHeader;
     }
 
-    /**
-     * @param array $jobs
-     *
-     * @return array
-     */
     protected function extendJobCommand(array $jobs): array
     {
         foreach ($jobs as $i => $job) {

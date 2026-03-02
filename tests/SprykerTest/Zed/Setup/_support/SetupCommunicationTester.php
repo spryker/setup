@@ -27,11 +27,6 @@ class SetupCommunicationTester extends Actor
 {
     use _generated\SetupCommunicationTesterActions;
 
-    /**
-     * @param string $pathToDirectory
-     *
-     * @return string
-     */
     public function createTestFile(string $pathToDirectory): string
     {
         if (!is_dir($pathToDirectory)) {
@@ -44,11 +39,6 @@ class SetupCommunicationTester extends Actor
         return $pathToFile;
     }
 
-    /**
-     * @param string $pathToDirectory
-     *
-     * @return void
-     */
     public function clearDirectory(string $pathToDirectory): void
     {
         if (is_dir($pathToDirectory)) {

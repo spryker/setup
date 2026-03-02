@@ -33,9 +33,6 @@ class DeployPreparePropelConsole extends Console
      */
     public const DESCRIPTION = 'Prepares Propel configuration on appserver';
 
-    /**
-     * @return void
-     */
     protected function configure(): void
     {
         $this->setName(static::COMMAND_NAME);
@@ -44,12 +41,6 @@ class DeployPreparePropelConsole extends Console
         parent::configure();
     }
 
-    /**
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
-     *
-     * @return int
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->warning(sprintf('The console command `%s` is deprecated. Use `propel:deploy:prepare` instead', static::COMMAND_NAME));
@@ -71,12 +62,6 @@ class DeployPreparePropelConsole extends Console
         return static::CODE_SUCCESS;
     }
 
-    /**
-     * @param string $command
-     * @param array $arguments
-     *
-     * @return int
-     */
     protected function runDependingCommand(string $command, array $arguments = []): int
     {
         $command = $this->getApplication()->find($command);

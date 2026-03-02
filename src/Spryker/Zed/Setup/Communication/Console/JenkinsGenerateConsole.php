@@ -30,9 +30,6 @@ class JenkinsGenerateConsole extends Console
      */
     public const DESCRIPTION = 'Generate Jenkins jobs configuration';
 
-    /**
-     * @return void
-     */
     protected function configure(): void
     {
         $this->setName(static::COMMAND_NAME);
@@ -48,12 +45,6 @@ class JenkinsGenerateConsole extends Console
         parent::configure();
     }
 
-    /**
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
-     *
-     * @return int
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var array $roles */

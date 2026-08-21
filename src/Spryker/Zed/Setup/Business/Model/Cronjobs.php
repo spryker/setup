@@ -316,7 +316,6 @@ class Cronjobs
         }
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
 
         return (int)$httpCode;
     }
@@ -343,7 +342,6 @@ class Cronjobs
         if ($curlResponse === false) {
             throw new ErrorException('cURL error: ' . curl_error($ch) . ' while calling Jenkins URL ' . $getUrl);
         }
-        curl_close($ch);
 
         /** @phpstan-var string */
         return $curlResponse;

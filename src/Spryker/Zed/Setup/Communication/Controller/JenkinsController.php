@@ -78,7 +78,6 @@ class JenkinsController extends AbstractController
         }
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
 
         return $httpCode;
     }

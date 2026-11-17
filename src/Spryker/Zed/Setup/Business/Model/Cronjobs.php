@@ -298,24 +298,24 @@ class Cronjobs
     {
         $postUrl = $this->getJenkinsUrl($url);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $postUrl);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->getHeaders());
-        curl_setopt($ch, CURLOPT_HEADER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FAILONERROR, true);
+        $curlHandle = curl_init();
+        curl_setopt($curlHandle, CURLOPT_URL, $postUrl);
+        curl_setopt($curlHandle, CURLOPT_POST, 1);
+        curl_setopt($curlHandle, CURLOPT_HTTPHEADER, $this->getHeaders());
+        curl_setopt($curlHandle, CURLOPT_HEADER, true);
+        curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $body);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curlHandle, CURLOPT_FAILONERROR, true);
 
-        $curlResponse = curl_exec($ch);
+        $curlResponse = curl_exec($curlHandle);
 
         if ($curlResponse === false) {
-            $exceptionMessage = $this->buildExceptionMessage(curl_error($ch), $postUrl);
+            $exceptionMessage = $this->buildExceptionMessage(curl_error($curlHandle), $postUrl);
 
             throw new ErrorException($exceptionMessage);
         }
 
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $httpCode = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
 
         return (int)$httpCode;
     }
@@ -331,16 +331,16 @@ class Cronjobs
     {
         $getUrl = $this->getJenkinsUrl($url);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $getUrl);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FAILONERROR, true);
+        $curlHandle = curl_init();
+        curl_setopt($curlHandle, CURLOPT_URL, $getUrl);
+        curl_setopt($curlHandle, CURLOPT_HEADER, false);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curlHandle, CURLOPT_FAILONERROR, true);
 
-        $curlResponse = curl_exec($ch);
+        $curlResponse = curl_exec($curlHandle);
 
         if ($curlResponse === false) {
-            throw new ErrorException('cURL error: ' . curl_error($ch) . ' while calling Jenkins URL ' . $getUrl);
+            throw new ErrorException('cURL error: ' . curl_error($curlHandle) . ' while calling Jenkins URL ' . $getUrl);
         }
 
         /** @phpstan-var string */

@@ -64,20 +64,20 @@ class JenkinsController extends AbstractController
     private function callJenkins($url, $body = '')
     {
         $postUrl = $this->getFactory()->getConfig()->getJenkinsUrl() . '/' . $url;
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $postUrl);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: text/xml']);
-        curl_setopt($ch, CURLOPT_HEADER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $curlHandle = curl_init();
+        curl_setopt($curlHandle, CURLOPT_URL, $postUrl);
+        curl_setopt($curlHandle, CURLOPT_POST, 1);
+        curl_setopt($curlHandle, CURLOPT_HTTPHEADER, ['Content-Type: text/xml']);
+        curl_setopt($curlHandle, CURLOPT_HEADER, true);
+        curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $body);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
 
-        $curlResponse = curl_exec($ch);
+        $curlResponse = curl_exec($curlHandle);
         if ($curlResponse === false) {
-            throw new ErrorException('cURL error: ' . curl_error($ch) . ' while calling Jenkins URL ' . $postUrl);
+            throw new ErrorException('cURL error: ' . curl_error($curlHandle) . ' while calling Jenkins URL ' . $postUrl);
         }
 
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $httpCode = curl_getinfo($curlHandle, CURLINFO_HTTP_CODE);
 
         return $httpCode;
     }
